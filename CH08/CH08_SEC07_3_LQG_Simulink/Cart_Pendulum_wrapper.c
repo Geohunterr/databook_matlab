@@ -40,10 +40,10 @@ void Cart_Pendulum_Outputs_wrapper(const real_T *u,
       y1[0].re = u1[0].re;
       y1[0].im = u1[0].im;
 */
-y0[0] = xC[0];
-y0[1] = xC[1];
-y0[2] = xC[2];
-y0[3] = xC[3];
+x[0] = xC[0];
+x[1] = xC[1];
+x[2] = xC[2];
+x[3] = xC[3];
 /* %%%-SFUNWIZ_wrapper_Outputs_Changes_END --- EDIT HERE TO _BEGIN */
 }
 
@@ -67,8 +67,8 @@ double Cy;
 Sy = sin(xC[2]);
 Cy = cos(xC[2]);
 dx[0] = xC[1];
-dx[1] = (1/(m*L*L*(M+m*(1-Cy*Cy))))*(-1*m*m*L*L*g*Cy*Sy + m*L*L*(m*L*xC[3]*xC[3]*Sy - d*xC[1])) + m*L*L*(1/(m*L*L*(M+m*(1-Cy*Cy))))*u0[0];
+dx[1] = (1/(m*L*L*(M+m*(1-Cy*Cy))))*(-1*m*m*L*L*g*Cy*Sy + m*L*L*(m*L*xC[3]*xC[3]*Sy - d*xC[1])) + m*L*L*(1/(m*L*L*(M+m*(1-Cy*Cy))))*u[0];
 dx[2] = xC[3];
-dx[3] = (1/(m*L*L*(M+m*(1-Cy*Cy))))*((m+M)*m*g*L*Sy - m*L*Cy*(m*L*xC[3]*xC[3]*Sy - d*xC[1])) - m*L*Cy*(1/(m*L*L*(M+m*(1-Cy*Cy))))*u0[0];
+dx[3] = (1/(m*L*L*(M+m*(1-Cy*Cy))))*((m+M)*m*g*L*Sy - m*L*Cy*(m*L*xC[3]*xC[3]*Sy - d*xC[1])) - m*L*Cy*(1/(m*L*L*(M+m*(1-Cy*Cy))))*u[0];
 /* %%%-SFUNWIZ_wrapper_Derivatives_Changes_END --- EDIT HERE TO _BEGIN */
 }
